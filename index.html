@@ -2,25 +2,163 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Fazendas – Conceitos de HTML e CSS</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazendas Grandes: Conceitos de HTML e CSS</title>
+    <!-- Incluindo Tailwind CSS para estilização fácil e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do tema (opcional: usando uma fonte mais amigável) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'terra': '#8B4513', // Marrom terra
+                        'verde-colheita': '#38761D', // Verde de plantação
+                        'ceu': '#ADD8E6', // Azul claro
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Define a fonte Inter como padrão, garantindo boa legibilidade */
+        body {
+            font-family: 'inter', sans-serif;
+            background-color: #f7f3e8; /* Fundo levemente creme */
+        }
+    </style>
 </head>
+<body class="min-h-screen antialiased">
 
-<body>
-    <header>
-        <h1>Fazendas – Estrutura e Tecnologia</h1>
-        <p>Site criado para demonstrar na prática os conceitos de HTML e CSS.</p>
+    <!-- CABEÇALHO (HTML: header) - Demonstração de layout flexível -->
+    <header class="bg-verde-colheita shadow-lg text-white p-6 md:p-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <!-- Título Principal (HTML: h1) -->
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                Fazendas Grandes: Estrutura e Estilo
+            </h1>
+            <!-- Subtítulo (HTML: p) -->
+            <p class="mt-2 sm:mt-0 text-lg opacity-90">
+                Uma demonstração de HTML e CSS (Tailwind)
+            </p>
+        </div>
     </header>
 
-    <nav>
-        <a href="#fazendas">Sobre Fazendas</a>
-        <a href="#html">Conceitos de HTML</a>
-        <a href="#css">Conceitos de CSS</a>
-    </nav>
+    <!-- CONTEÚDO PRINCIPAL (HTML: main) -->
+    <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-12">
 
-    <section id="fazendas">
-        <h2>O que é uma Fazenda?</h2>
-        <p>
-            Uma <strong>fazenda</strong> é uma área rural dedicada à produção agrícola ou pecuária.
-            Neste site, apresentamos informações simples, sem boatos e sem exageros — apenas conteúdo claro.
-        </p
+        <!-- SEÇÃO 1: ESTRUTURA SEMÂNTICA (HTML: section) -->
+        <section class="bg-white p-6 md:p-10 rounded-xl shadow-2xl border-t-4 border-terra">
+            <h2 class="text-3xl font-bold text-terra mb-6">
+                1. A Estrutura Semântica do HTML
+            </h2>
+            
+            <!-- Artigo 1: Sobre a Escala (HTML: article) -->
+            <article class="mb-8 p-4 border-l-4 border-verde-colheita bg-gray-50 rounded-lg">
+                <h3 class="text-xl font-semibold mb-2 text-verde-colheita">
+                    O Campo e a Tag &lt;article&gt;
+                </h3>
+                <!-- Parágrafo (HTML: p) -->
+                <p class="text-gray-700 leading-relaxed">
+                    Em uma fazenda moderna, a organização é chave. No HTML, usamos tags como 
+                    <code>&lt;section&gt;</code> e <code>&lt;article&gt;</code> para organizar o conteúdo de forma lógica. 
+                    Cada artigo aqui representa um tópico independente, como um campo de plantio distinto. 
+                    A escala de uma grande fazenda exige planejamento, assim como a estrutura de uma página web complexa.
+                </p>
+            </article>
+
+            <!-- Artigo 2: Blocos de Conteúdo (HTML: div) -->
+            <article class="p-4 bg-white rounded-lg shadow-inner">
+                <h3 class="text-xl font-semibold mb-2 text-verde-colheita">
+                    Gerenciando a Produção com Tags &lt;div&gt;
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                    A tag <code>&lt;div&gt;</code> é o contêiner genérico, essencial para agrupar elementos e aplicar estilos 
+                    (como esta caixa de sombra). Em uma grande operação agrícola, a divisão por setores (colheita, irrigação, 
+                    armazenamento) é feita com contêineres lógicos, espelhando o papel do <code>&lt;div&gt;</code> no layout de página.
+                </p>
+            </article>
+        </section>
+
+        <!-- SEÇÃO 2: ESTILIZAÇÃO RESPONSIVA COM CSS (Tailwind) -->
+        <section class="bg-terra p-6 md:p-10 rounded-xl shadow-2xl border-t-4 border-verde-colheita text-white">
+            <h2 class="text-3xl font-bold mb-6">
+                2. Estilização e Responsividade (CSS)
+            </h2>
+            
+            <!-- Demonstração de layout responsivo (grades) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Coluna 1: Cores -->
+                <div class="bg-white text-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-terra">Cores</h3>
+                    <p class="text-sm">
+                        O CSS permite definir o tema visual. Aqui, usamos cores que remetem 
+                        ao ambiente rural: a <code>bg-terra</code> (marrom) e a <code>bg-verde-colheita</code> 
+                        (verde) de fundo.
+                    </p>
+                </div>
+                
+                <!-- Coluna 2: Fontes e Espaçamento -->
+                <div class="bg-white text-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-terra">Fontes e Tipografia</h3>
+                    <p class="text-sm">
+                        As classes <code>text-3xl</code> (tamanho do texto), <code>font-bold</code> 
+                        (peso da fonte) e <code>leading-relaxed</code> (espaçamento entre linhas) 
+                        são exemplos de como o CSS controla a tipografia.
+                    </p>
+                </div>
+                
+                <!-- Coluna 3: Responsividade -->
+                <div class="bg-white text-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-terra">Layout Responsivo</h3>
+                    <p class="text-sm">
+                        As classes <code>grid-cols-1</code> (em telas pequenas) e 
+                        <code>md:grid-cols-3</code> (em telas médias ou maiores) mostram 
+                        a adaptabilidade do CSS, garantindo que o layout se ajuste perfeitamente 
+                        a celulares e desktops.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: IMAGEM CONCEITUAL (HTML: figure e img) -->
+        <section class="bg-white p-6 md:p-10 rounded-xl shadow-2xl border-t-4 border-ceu">
+            <h2 class="text-3xl font-bold text-terra mb-6">
+                3. Elementos de Mídia
+            </h2>
+
+            <!-- Estrutura para imagem e legenda (HTML: figure) -->
+            <figure class="mx-auto w-full max-w-4xl">
+                <!-- Imagem (HTML: img) -->
+                <img 
+                    src="https://placehold.co/1200x400/38761D/FFFFFF?text=Vista+Aérea+da+Fazenda" 
+                    alt="Placeholder de uma vista aérea de uma grande fazenda" 
+                    class="rounded-lg shadow-xl w-full h-auto"
+                    onerror="this.onerror=null; this.src='https://placehold.co/1200x400/8B4513/FFFFFF?text=Imagem+Indisponível'"
+                />
+                <!-- Legenda (HTML: figcaption) -->
+                <figcaption class="text-center mt-3 text-gray-600 italic">
+                    <code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code>: Estruturando Imagens com Legendas
+                </figcaption>
+            </figure>
+            
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ (HTML: footer) - Fixado na parte inferior para demonstrar posição -->
+    <footer class="bg-gray-800 text-white p-4 mt-10">
+        <div class="max-w-7xl mx-auto text-center text-sm opacity-80">
+            <p>
+                &copy; 2025 Demonstração de HTML e CSS. Projeto educacional sobre Estrutura Web.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
